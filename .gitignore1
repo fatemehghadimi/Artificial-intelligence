@@ -1,0 +1,60 @@
+from matplotlib import colors
+from io import IncrementalNewlineDecoder
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sb
+import seaborn as sns
+import matplotlib as mpl
+
+plt.style.use('classic')
+%matplotlib inline
+import numpy as np
+sns.set()
+
+
+x = ['Mashhad', 'Tehran', 'Yazd', 'Hamedan', 'Esfahan','Rasht']
+y = [5000000, 9000000, 4000000, 3500000, 6000000,2700000]
+plt.bar([1,2,3,4,5,6], y, color="mediumvioletred", edgecolor='black')
+plt.xticks([1,2,3,4,5,6], x)
+plt.xlabel('City')
+plt.ylabel("population")
+plt.title("Iran ")
+plt.show()
+
+c = ['Mashhad', 'Tehran', 'Yazd', 'Hamedan', 'Esfahan','Rasht']
+p = [5000000, 9000000, 4000000, 3500000, 6000000,2700000]
+plt.hist(c,bins='auto')
+plt.show()
+
+
+
+City=['Mashhad', 'Tehran', 'Yazd', 'Hamedan', 'Esfahan','Rasht']
+population=[5000000, 9000000, 4000000, 3500000, 6000000,2700000]
+plt.plot(City,population)
+plt.show()
+
+plt.scatter(City,population)
+plt.show()
+
+plt.pie(city_pop,labels=['Mashhad', 'Tehran', 'Yazd', 'Hamedan', 'Esfahan','Rasht'])
+plt.show()
+
+
+
+plt.figure(figsize=(9,6),dpi=100)
+plt.plot(years,iran_pop,color='green')
+plt.xlabel('year')
+plt.ylabel('population')
+plt.title('The population of some Iranian cities')
+plt.yticks([21.91,28.51,38.67,56.23,66.13,74.57],['Mashhad', 'Tehran', 'Yazd', 'Hamedan', 'Esfahan','Rasht'])
+plt.xticks([5000000, 9000000, 4000000, 3500000, 6000000,2700000])
+plt.show()
+
+
+
+
+rnd=np.random.RandomState(0)
+x=np.linspace(0,10,500)
+y=np.cumsum(rnd.randn(500,6),0)
+plt.plot(x,y)
+plt.legend('MTYHER',ncol=2,loc='upper left');
